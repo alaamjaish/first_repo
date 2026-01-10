@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Foundational Course Landing Page | Riyadh Expats</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D4A373", // Warm, earthy gold
+                        "secondary": "#B08A64", // Slightly darker primary for accents
+                        "background-light": "#FDFBF7", // Very light cream/sand
+                        "background-dark": "#362E2E", // Deep warm brown
+                        "text-dark": "#362E2E", // Dark brown for text
+                        "text-light": "#FFFCEF", // Off-white for light text on dark background
+                        "desert-sand": "#EFE6DD", // Light desert sand
+                        "desert-terracotta": "#A35C3E", // Deep reddish-brown for accents
+                        "muted-gold": "#CBB88B", // Muted gold for professional touch
+                        "soft-brown": "#A1887F", // Soft brown for subtle accents
+                        "light-cream": "#F9F6F1", // Even lighter cream
+                        "dark-charcoal": "#4A4A4A", // Dark charcoal for professional text
+                        "progress-fill": "#8B6B5D", // A more muted, professional progress bar fill
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "sans": ["Lexend", "sans-serif"],
+                        "arabic-decorative": ["Cairo", "sans-serif"], // For decorative Arabic script
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<script>
+        document.documentElement.classList.add("js-enabled");
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 96px;
+        }
+
+        .js-enabled .scroll-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            will-change: opacity, transform;
+        }
+
+        .js-enabled .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .js-enabled [data-reveal-child] {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform;
+        }
+
+        .js-enabled [data-reveal-child].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .review-marquee {
+            overflow: hidden;
+        }
+
+        .review-track {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            width: max-content;
+            animation: review-scroll-left 28s linear infinite;
+        }
+
+        .review-marquee.reverse .review-track {
+            animation-name: review-scroll-right;
+        }
+
+        .review-track img {
+            width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 18px 30px -20px rgba(54, 46, 46, 0.45);
+            background: #fff;
+        }
+
+        @keyframes review-scroll-left {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes review-scroll-right {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .review-track img {
+                width: 220px;
+                height: 150px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .js-enabled .scroll-reveal,
+            .js-enabled [data-reveal-child] {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .review-track {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-dark antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<nav class="sticky top-0 z-50 w-full border-b border-desert-sand bg-background-light/95 backdrop-blur-sm px-4 md:px-10 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img src="images/logo.png" alt="Arabently" class="h-10 w-auto"/>
+</div>
+<div class="hidden md:flex flex-1 justify-end items-center gap-8">
+<div class="flex items-center gap-6">
+<a class="text-text-dark text-sm font-medium hover:text-primary transition-colors" href="#social-proof">Successes</a>
+<a class="text-text-dark text-sm font-medium hover:text-primary transition-colors" href="#method">Our Method</a>
+<a class="text-text-dark text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
+<a class="text-text-dark text-sm font-medium hover:text-primary transition-colors" href="#faq">FAQ</a>
+</div>
+<a class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-secondary transition-colors" href="#pricing">
+<span class="truncate">Join the Course Today</span>
+</a>
+</div>
+<button class="md:hidden p-2 text-text-dark">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<section class="relative w-full overflow-hidden pt-10 pb-16 md:py-20 bg-light-cream scroll-reveal">
+<div class="absolute top-10 left-5 opacity-[0.03] pointer-events-none text-8xl font-arabic-decorative text-muted-gold z-0 rotate-[-10deg]">أهلاً</div>
+<div class="absolute bottom-10 right-5 opacity-[0.03] pointer-events-none text-8xl font-arabic-decorative text-muted-gold z-0 rotate-[10deg]">مرحباً</div>
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+<div class="flex flex-col-reverse md:flex-row gap-10 items-center" data-reveal-stagger>
+<div class="flex-1 flex flex-col gap-6 text-left md:pr-10" data-reveal-child>
+<h1 class="text-dark-charcoal text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]">
+                        PROFESSIONAL EXPATS IN RIYADH <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-soft-brown">Ready to speak Arabic with&nbsp;Saudis?</span>
+</h1>
+<h2 class="text-gray-700 text-lg md:text-xl font-normal leading-relaxed max-w-xl">
+                        This self-paced Foundational Course is designed to take professional expats in Riyadh from Zero to confidently handling everyday conversations in Saudi dialect.
+                    </h2>
+<div class="pt-2">
+<a class="inline-flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-base font-bold shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5 transition-all" href="#pricing">
+                            Join the Course Today
+                        </a>
+<div class="mt-4 flex items-center gap-3">
+<img src="images/happy_clients.png" alt="Over 100 happy client" class="h-10 w-10 rounded-full object-cover"/>
+<div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="text-sm text-gray-700">Over 100 happy client</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full" data-reveal-child>
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl relative" data-alt="Professional expats in Riyadh" style='background-image: url("images/foundational/hero_wow.png");'>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-charcoal/30 to-transparent rounded-2xl"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light scroll-reveal">
+<div class="layout-container max-w-4xl mx-auto px-4 md:px-10 text-center">
+<h2 class="text-text-dark text-3xl md:text-4xl font-bold mb-6">Learning Arabic could be so hard <br/>(but it's not your fault)</h2>
+<p class="text-gray-700 text-lg mb-12 max-w-2xl mx-auto">
+                If you've tried to learn Arabic, you probably found it very challenging. That's because most resources:
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left" data-reveal-stagger>
+<div class="p-6 rounded-xl bg-desert-sand border border-gray-200" data-reveal-child>
+<div class="w-12 h-12 rounded-full bg-desert-terracotta/20 text-desert-terracotta flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h3 class="font-bold text-lg mb-2">X Teach Standard Arabic</h3>
+<p class="text-sm text-gray-700">It's the formal Arabic of news and textbooks only. The moment you say "Marhaban" people know something is off.</p>
+</div>
+<div class="p-6 rounded-xl bg-desert-sand border border-gray-200" data-reveal-child>
+<div class="w-12 h-12 rounded-full bg-desert-terracotta/20 text-desert-terracotta flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<h3 class="font-bold text-lg mb-2">X Focus too much on Grammar</h3>
+<p class="text-sm text-gray-700">They get you to memorize dry charts and complex rules that make you overthink every word.</p>
+</div>
+<div class="p-6 rounded-xl bg-desert-sand border border-gray-200" data-reveal-child>
+<div class="w-12 h-12 rounded-full bg-desert-terracotta/20 text-desert-terracotta flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">pets</span>
+</div>
+<h3 class="font-bold text-lg mb-2">X Present Irrelevant Content</h3>
+<p class="text-sm text-gray-700">They teach you useless sentences you will never use in a real conversation. "The duck loves the water."</p>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<img src="images/foundational/problem.png" alt="Learning Arabic challenges" class="w-full max-w-3xl rounded-2xl shadow-lg"/>
+</div>
+</div>
+</section>
+<section class="py-20 bg-desert-sand overflow-hidden scroll-reveal">
+<div class="absolute top-1/4 right-0 opacity-[0.03] pointer-events-none text-9xl font-arabic-decorative text-primary z-0 rotate-[15deg]">O?O1U,USU.</div>
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+<div class="bg-background-light rounded-3xl p-8 md:p-12 shadow-sm border border-gray-200 flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/3 flex flex-col items-center">
+<img src="images/instructor.png" alt="Portrait of Osama the Arabic instructor smiling" class="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover shadow-lg mb-6"/>
+</div>
+<div class="flex-1">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-4">But I'm here to help</h2>
+<p class="text-lg italic text-gray-700 mb-6">I spent <strong>2,500+ hours</strong> trying all the methods, so you don't have to!</p>
+<h3 class="text-xl font-bold text-dark-charcoal mb-6">Hala walla dY`<dY?&macr; I'm Osama, the instructor of this course.</h3>
+<div class="space-y-4 text-gray-700 text-lg leading-relaxed mb-8">
+<p>
+                            For the past few years, I've worked with 100+ expats in Riyadh and GCC who wanted one thing: to speak the Saudi dialect people actually use here.
+                        </p>
+<p>
+                            Together, we tried everything. Some methods worked--but painfully slow. Others wasted weeks before we realized they led nowhere. And a few worked like magic!
+                        </p>
+<p>
+                            Over the 2,500+ hours of lessons, I kept refining my method--keeping what works, tossing the rest. By late 2025, my waitlist had grown to 170+ people, and I knew I couldn't help everyone one-on-one.
+                        </p>
+</div>
+<h3 class="text-2xl md:text-3xl font-bold text-text-dark mb-4">So I built the Foundational Course!</h3>
+<p class="text-gray-700 text-lg leading-relaxed mb-4">
+                            A self-paced program designed to take professional expats in Riyadh from zero Arabic to confidently handling everyday conversations in Saudi dialect.
+                        </p>
+<p class="font-medium text-text-dark text-lg">
+                            2,500+ hours of teaching experience, condensed into one comprehensive program--so you skip the trial-and-error and do it right the first time.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-dark text-text-light scroll-reveal">
+<div class="absolute bottom-5 left-5 opacity-[0.03] pointer-events-none text-9xl font-arabic-decorative text-primary z-0 rotate-[-10deg]">O?U,O½U?Oc</div>
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">You will start using Arabic in Riyadh</h2>
+<p class="text-gray-300 text-lg">Here's how this course gets you there:</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-stagger>
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors" data-reveal-child>
+<span class="material-symbols-outlined text-4xl text-primary">record_voice_over</span>
+<h3 class="text-xl font-bold">Saudi Dialect</h3>
+<p class="text-gray-300">Not textbook Arabic. The actual dialect used in Riyadh's offices and streets--so people don't switch to English when you talk.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors" data-reveal-child>
+<span class="material-symbols-outlined text-4xl text-primary">psychology</span>
+<h3 class="text-xl font-bold">Intuitive Method</h3>
+<p class="text-gray-300">Learn through sentence patterns instead of grammar charts. Your brain naturally "absorbs" the logic without the overwhelming rules.</p>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors" data-reveal-child>
+<span class="material-symbols-outlined text-4xl text-primary">forum</span>
+<h3 class="text-xl font-bold">Relevant Content</h3>
+<p class="text-gray-300">Real-world dialogues, stories, and monologues designed to match your level as an expat in Saudi--not random sentences you'll never use.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light scroll-reveal" id="social-proof">
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-4">They did it. You can do it too!</h2>
+<p class="text-xl text-gray-700 font-medium mb-6">Whatever your age, profession, or mother tongue is, YOU CAN DO IT!</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal-stagger>
+<div class="p-8 bg-desert-sand rounded-2xl relative" data-reveal-child>
+<span class="material-symbols-outlined absolute top-6 right-6 text-4xl text-primary/20">format_quote</span>
+<p class="text-gray-700 mb-4 italic">Spent months at a traditional institute. Could read and write--but couldn't hold a simple conversation.</p>
+<p class="text-gray-700 mb-6 italic">Within weeks of joining my sessions, he noticed the difference. Now he can introduce himself and ask simple questions about other people's days--in dialect.</p>
+<div class="mt-4">
+<div class="flex items-center gap-1 text-primary mb-2">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="font-bold text-text-dark">Daniel</p>
+<p class="text-xs text-gray-600">Spanish | 30s | Entrepreneur</p>
+</div>
+</div>
+<div class="p-8 bg-desert-sand rounded-2xl relative" data-reveal-child>
+<span class="material-symbols-outlined absolute top-6 right-6 text-4xl text-primary/20">format_quote</span>
+<p class="text-gray-700 mb-4 italic">Started from absolute zero.</p>
+<p class="text-gray-700 mb-6 italic">About 65 lessons later, they handle most everyday conversations comfortably--daily life, past trips, work. They even follow simple discussions and debates.</p>
+<div class="mt-4">
+<div class="flex items-center gap-1 text-primary mb-2">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="font-bold text-text-dark">Shrikant &amp; Seema</p>
+<p class="text-xs text-gray-600">Indian | 40s | Tech Leads</p>
+</div>
+</div>
+<div class="p-8 bg-desert-sand rounded-2xl relative" data-reveal-child>
+<span class="material-symbols-outlined absolute top-6 right-6 text-4xl text-primary/20">format_quote</span>
+<p class="text-gray-700 mb-4 italic">Knew some Arabic--could read, could build basic sentences. But everything felt scattered, full of gaps.</p>
+<p class="text-gray-700 mb-6 italic">After a few months of training, the pieces clicked. Now she holds real conversations about work and life.</p>
+<div class="mt-4">
+<div class="flex items-center gap-1 text-primary mb-2">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+<span class="material-symbols-outlined text-base">star</span>
+</div>
+<p class="font-bold text-text-dark">Lif</p>
+<p class="text-xs text-gray-600">German | 30s | Operational Manager</p>
+</div>
+</div>
+</div>
+<div class="mt-12 space-y-6">
+<div class="review-marquee">
+<div class="review-track">
+<img src="images/reviews/review-01.png" alt="Review screenshot 1"/>
+<img src="images/reviews/review-02.png" alt="Review screenshot 2"/>
+<img src="images/reviews/review-03.png" alt="Review screenshot 3"/>
+</div>
+</div>
+<div class="review-marquee reverse">
+<div class="review-track">
+<img src="images/reviews/review-04.png" alt="Review screenshot 4"/>
+<img src="images/reviews/review-05.png" alt="Review screenshot 5"/>
+<img src="images/reviews/review-06.png" alt="Review screenshot 6"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-desert-sand scroll-reveal" id="method">
+<div class="absolute top-1/4 left-0 opacity-[0.03] pointer-events-none text-9xl font-arabic-decorative text-primary z-0 rotate-[-10deg]">O?O1U,U.</div>
+<div class="layout-container max-w-5xl mx-auto px-4 md:px-10 relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-6">Our Method</h2>
+<div class="bg-background-light p-6 rounded-2xl shadow-sm mb-10 text-left border border-gray-200">
+<h3 class="font-bold text-xl mb-3 text-desert-terracotta">Why do most methods fail?</h3>
+<p class="text-gray-700 mb-4">
+                        Most courses fail because they force you to memorize rules and solve quizzes about them. They treat language like Math.
+                    </p>
+<p class="text-gray-700 mb-4">
+                        But research shows that <strong>language is acquired, not learned</strong>. And acquisition only happens in one way:
+                    </p>
+<p class="text-text-dark italic font-medium mb-4">Listen + Understand + Repeat with something slightly more complex.</p>
+<p class="text-gray-700 italic mb-6">That's it. Your brain picks up the language when you consume lots of messages you actually understand.</p>
+<p class="font-medium text-text-dark mb-2">But there are three conditions for this to work:</p>
+<ol class="list-decimal list-inside text-gray-700 space-y-1">
+<li><strong>Volume</strong> - You need <em>lots</em> of listening.</li>
+<li><strong>Comprehension</strong> - You must understand 70-90% of what you hear.</li>
+<li><strong>Progression</strong> - The content needs to gradually become more complex.</li>
+</ol>
+</div>
+<h3 class="text-2xl font-bold text-text-dark mb-6">How our course uses that?</h3>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+                    To speak natural Saudi dialect, your brain needs to be flooded with messages it understands. This course is built on a specific <strong>Learning Loop</strong> designed to feed your brain exactly what it needs:
+                </p>
+<div class="flex justify-center mb-12">
+<img src="images/foundational/learning_loop.png" alt="Learning Loop" class="w-full max-w-3xl rounded-2xl shadow-lg"/>
+</div>
+</div>
+<div class="relative">
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 rounded-full"></div>
+<div class="flex flex-col gap-12" data-reveal-stagger>
+<div class="relative flex flex-col md:flex-row gap-8 items-center" data-reveal-child>
+<div class="flex-1 text-right md:pr-12">
+<span class="text-sm font-bold tracking-widest text-primary">STEP 01</span>
+<h3 class="text-2xl font-bold text-text-dark mb-2">Structured Lessons</h3>
+<p class="text-gray-700">These are short, focused lessons that <strong>decode the patterns</strong> of the Saudi dialect.</p>
+<p class="text-gray-700">We don't bore you with abstract grammar. We just present you with sentences that will help you quickly get a pattern of Saudi Arabic.</p>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 rounded-full bg-primary border-4 border-background-light shadow-lg shrink-0">
+<span class="material-symbols-outlined text-white text-3xl">school</span>
+</div>
+<div class="flex-1 md:pl-12 opacity-50 hidden md:block">
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row-reverse gap-8 items-center" data-reveal-child>
+<div class="flex-1 text-left md:pl-12">
+<span class="text-sm font-bold tracking-widest text-primary">STEP 02</span>
+<h3 class="text-2xl font-bold text-text-dark mb-2">Comprehensible Input</h3>
+<p class="text-gray-700 mb-4"><strong>This is the most important part.</strong> You will listen to high-volume, relatable content designed specifically for <strong>Expats in Riyadh</strong>.</p>
+<p class="text-gray-700 mb-4">It uses the <strong>"i+1" Principle</strong>: The input is always <em>just</em> above your current level, so you understand the message but naturally absorb new words and grammar without trying.</p>
+<div class="bg-light-cream p-4 rounded-lg border border-gray-200 text-sm">
+<strong class="block text-text-dark mb-1">Why is our Input Different?</strong>
+<p class="text-gray-700 mb-2">Most listening materials are either too fast (native TV) or too boring (children's books).</p>
+<p class="text-gray-700">Our input is <strong>relatable to YOUR life</strong>. You'll hear stories about offices in Riyadh, ordering from local cafes, and navigating Saudi traffic. Your brain <em>wants</em> to understand it, so it <em>acquires</em> the language faster.</p>
+</div>
+</div>
+<div class="z-10 flex items-center justify-center w-16 h-16 rounded-full bg-background-light border-4 border-primary shadow-lg shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">headphones</span>
+</div>
+<div class="flex-1 md:pr-12 opacity-50 hidden md:block">
+</div>
+</div>
+</div>
+<div class="mt-16 p-6 bg-background-light rounded-xl shadow-sm border border-gray-200" data-reveal-child>
+<h4 class="font-bold text-lg mb-2 text-center text-text-dark">"But... what about speaking practice?"</h4>
+<p class="text-gray-700 text-center mb-4">I'm glad you asked.</p>
+<p class="text-gray-700 text-center mb-4">Speaking practice is so important. However, as a beginner, you should spend <strong>80% of your time listening and comprehending</strong>, and only <strong>20% speaking</strong>. If you try to speak without enough input, you're just translating poorly from English in your head.</p>
+<div class="bg-light-cream p-4 rounded-lg border border-gray-200 text-center">
+<strong class="text-text-dark">Does this course include speaking sessions?</strong>
+<p class="text-gray-700 text-sm mt-1">This offer focuses on the core 80%--giving you the massive input you need. It does not include live sessions.</p>
+<p class="text-gray-700 text-sm mt-2"><em>However, when you're ready to speak, we'll share resources and recommendations to help you set up the other 20%.</em></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light scroll-reveal">
+<div class="layout-container max-w-4xl mx-auto px-4 md:px-10">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-6 text-center">What's actually covered in the course?</h2>
+<p class="text-center text-gray-700 mb-4 text-lg"><strong>Great question!</strong></p>
+<p class="text-center text-gray-700 mb-10 text-lg">Here's what this course curriculum look like:</p>
+<div class="grid gap-4" data-reveal-stagger>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">1</span>
+                            dY`< Your First Words in Saudi Arabic
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">This is where your journey begins. You'll learn the greetings Saudis actually use -- not the textbook "Marhaban" that instantly marks you as an outsider. We'll cover polite expressions, numbers from 0 to 100, and how to introduce yourself with your name, age, and nationality. You'll also pick up <strong>essential learner phrases</strong> -- like how to ask someone to repeat themselves -- so you're never stuck in silence. By the end of this unit, you'll be ready to walk into any room and greet people with confidence.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">2</span>
+                            dY-&oelig;&lsaquo;,? How to Introduce Yourself
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">Now it's time to go deeper. You'll learn how to talk about your background, your job, and your daily life -- in <strong>both past and present tense</strong>. We'll cover how to tell time, use time expressions, and describe your routine. You'll be able to say things like <em>"I moved here two years ago,"</em> <em>"I work at a tech company,"</em> and <em>"I usually wake up at 6."</em> This is the unit that transforms you from "someone who knows a few phrases" to <strong>someone who can express <em>who they are</em> and <em>what their life looks like</em>.</strong></p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">3</span>
+                            &fnof;?" How to Have Real Conversations
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">Talking about yourself is great -- but real connection happens when you ask about <em>others</em>. In this unit, you'll master the question words that unlock conversations: <em>what, where, when, how, and who</em>. You'll learn to ask people about their jobs, their routines, and their lives -- and you'll understand their answers. We'll also cover <strong>possessive pronouns</strong> (my/your), so you can say things like <em>"How's your day?"</em> or <em>"Where's your office?"</em> By the end, you won't just be speaking Arabic -- you'll be <strong>building rapport</strong>.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">4</span>
+                            &fnof;~ How to Handle Everyday Situations
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">This is where Arabic becomes <em>useful</em>. You'll learn how to order at a caf&eacute;, ask for what you need at a restaurant, and navigate a grocery store -- all in dialect. We'll cover <strong>polite and direct requests</strong>, so you know when to say <em>"Could you please..."</em> and when to just say <em>"Give me..."</em> You'll also learn how to ask for help and offer assistance to others. After this unit, you'll have the essentials to handle common transactional situations with confidence.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">5</span>
+                            dY`&reg; He , She &amp; What's Happening Now
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">By now, you can talk about yourself, ask others questions, and handle everyday situations. Now it's time to expand -- and talk about <strong>the people in your life</strong> -- your boss, your colleague, your spouse, your kids. You'll learn <strong>third-person conjugation</strong> (he/she), <strong>possessive pronouns (his/her)</strong>, the <strong>ongoing tense</strong>, and a rich set of relationship vocabulary. You'll be able to say things like <em>"My manager is wearing a Thobe"</em> or <em>"My daughter is sleeping."</em> This unit opens up an entire new dimension of expression.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">6</span>
+                            dY"?&nbsp;How to Navigate &amp; Give Directions
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">In this unit, you'll learn <strong>adverbs of place</strong> -- words like <em>next to, in front of, behind</em> -- and how to ask for and give directions. We'll also cover practical scenarios like gas stations, car workshops, and what to say if something goes wrong on the road. You'll learn <strong>negative commands</strong> ("Don't turn here") and higher numbers for prices and addresses. By the end, you'll have the foundations to handle basic navigation in Arabic.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">7</span>
+                            dY`&#x009d; How to Talk About Groups &amp; Plurals
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">Arabic has special forms for "we," "you all," and "they" -- and in this unit, you'll master them. You'll learn how to talk about what your team did, what your family is doing, or what "they" said. We'll cover <strong>plural nouns</strong> and group possession (our, their). This is the unit that lets you move beyond one-on-one conversations and start talking about <strong>the bigger picture</strong>.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">8</span>
+                            dY". How to Make Plans &amp; Discuss the Future
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">In this unit you'll learn the <strong>future tense</strong>, how to read and say dates, and expressions like <em>"next week," "in two months,"</em> and <em>"when I arrive."</em> Whether you're scheduling a meeting or making weekend plans, you'll have the language to express it. This unit also covers the <strong>verb "to be"</strong> -- a slightly tricky piece of Arabic that unlocks more natural-sounding sentences.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">9</span>
+                            dY?&yuml; How to Describe &amp; Compare Things
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">This unit is all about expressing the details. You'll learn how to use <strong>adjectives</strong> properly -- including where they go in a sentence and how they change based on gender. We'll cover <strong>possession structures</strong> so you can say things like <em>"my friend's car"</em> or <em>"the company's office."</em> And you'll learn <strong>comparatives and superlatives</strong> -- how to say <em>"better," "the best," "bigger," "the most important."</em> After this unit, your sentences won't just be correct -- they'll be <strong>expressive</strong>.</p>
+</details>
+<details class="group bg-desert-sand rounded-lg open:ring-1 open:ring-primary/50 p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-lg text-text-dark">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-dark-charcoal text-sm font-bold">10</span>
+                            dY"- How to Connect Your Ideas
+                        </div>
+<span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 pl-11 text-sm">This is where your Arabic starts to sound <em>polished</em>. You'll learn the <strong>linking words</strong> that make your Arabic flow: <em>if, because, but, that, therefore</em>. You'll learn the basics of <strong>conditionals</strong> (<em>"If I have time..."</em>), <strong>"have to"</strong> expressions (<em>"I had to leave early"</em>), and the connectors that tie your ideas together. These small words make a big difference in how natural your Arabic sounds. By the end of this unit, you'll be ready for real conversations -- not just survival phrases.</p>
+</details>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light scroll-reveal">
+<div class="layout-container max-w-5xl mx-auto px-4 md:px-10">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-6 text-center">Is this course the right fit for you?</h2>
+<p class="text-center text-gray-700 mb-10 text-lg">Let's figure that out! This course works perfectly for you if:</p>
+<div class="flex flex-col md:flex-row gap-8" data-reveal-stagger>
+<div class="flex-1 bg-background-light p-8 rounded-2xl shadow-sm border border-gray-200" data-reveal-child>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check</span>
+<div>
+<strong class="block text-text-dark">You're a Total Beginner</strong>
+<span class="text-sm text-gray-700">Starting from absolute zero and want to build a solid foundation in Saudi dialect? Perfect. We build your foundation from the ground up--no prior knowledge required.</span>
+</div>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check</span>
+<div>
+<strong class="block text-text-dark">You have Fragmented Arabic</strong>
+<span class="text-sm text-gray-700">Know some phrases and grammar but can't say that you have a real foundation in Arabic? We fill the gaps and give you a structured path to get out of the beginner phase</span>
+</div>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check</span>
+<div>
+<strong class="block text-text-dark">You're a "Fus`ha" switcher</strong>
+<span class="text-sm text-gray-700">Studied some Standard Arabic before but can't understand much in Riyadh? We teach you the actual dialect people speak in real-life.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="flex-1 bg-background-light p-8 rounded-2xl shadow-sm border border-gray-200 opacity-80" data-reveal-child>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-desert-terracotta text-3xl">cancel</span>
+<h3 class="text-xl font-bold">Looking for something else?</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-desert-terracotta text-sm mt-1">close</span>
+<div>
+<strong class="block text-text-dark">The Tourist</strong>
+<span class="text-sm text-gray-700">If you just want to learn a few phrases for a weekend trip, my <a class="text-primary font-semibold hover:underline" href="http://www.youtube.com/@Arabently">YouTube Channel</a> is a better (and free) fit.</span>
+</div>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-desert-terracotta text-sm mt-1">close</span>
+<div>
+<strong class="block text-text-dark">The Academic</strong>
+<span class="text-sm text-gray-700">If you are studying for the Quran or University, you need Standard Arabic. We focus 100% on the Riyadh Dialect.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-dark text-text-light relative overflow-hidden scroll-reveal" id="pricing">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<div class="absolute top-1/2 left-10 opacity-[0.03] pointer-events-none text-9xl font-arabic-decorative text-primary z-0 rotate-[-15deg]">O½U+O¼U.</div>
+<div class="layout-container max-w-4xl mx-auto px-4 md:px-10 relative z-10">
+<div class="text-center mb-10">
+<h2 class="text-3xl md:text-5xl font-black mb-4">Join the Founding Members Batch</h2>
+<p class="text-xl text-gray-300">I'm building the future of Arabently, and I want 10 pioneers to join the journey.<br/>Launching February 2026.</p>
+<div class="mt-4 inline-block px-4 py-1 rounded-full bg-primary text-white font-bold text-sm">(only 10 spots available)</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-primary/30 max-w-lg mx-auto" data-reveal-child>
+<div class="flex flex-col items-center mb-8">
+<p class="text-sm uppercase tracking-widest text-primary font-semibold">Lifetime Access</p>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-5xl font-black text-primary">2800</span>
+<span class="text-2xl font-bold text-text-light">SAR</span>
+</div>
+</div>
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-14 bg-primary text-white text-lg font-bold hover:scale-[1.02] transition-transform">
+                    Join the Course Today
+                </button>
+<p class="text-center text-xs text-gray-400 mt-4">Launch in early Feb 2026</p>
+<div class="space-y-4 mt-8 text-sm text-gray-200">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span><strong>The Structured Program's Content:</strong> Videos of 50 lessons (Full 10 units)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span><strong>The Input Materials:</strong> 50+ Listening Materials with the PDF transcriptions</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span><strong>Life-time access:</strong> Pay once, own it forever--including every future update and lesson I add.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">celebration</span>
+<span><strong>Exclusive Bonuses!</strong></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light scroll-reveal">
+<div class="absolute top-1/4 right-0 opacity-[0.03] pointer-events-none text-8xl font-arabic-decorative text-primary z-0 rotate-[10deg]">U?O_USOc</div>
+<div class="layout-container max-w-6xl mx-auto px-4 md:px-10 text-center relative z-10">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-4">Wait, did you say free bonuses?</h2>
+<p class="text-lg text-gray-700 mb-2"><strong>Yes! I decided to bundle in Three Free Bonuses!</strong></p>
+<p class="text-sm text-gray-600 mb-12"><em>(The third bonus is exclusive for the members of this batch!)</em></p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-stagger>
+<div class="flex flex-col items-center p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-desert-sand" data-reveal-child>
+<div class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl">sms</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Free Bonus #1</h3>
+<p class="font-bold text-text-dark mb-2">The "Saudi Texting" Mini-Course</p>
+<p class="text-sm text-gray-700">Master the Arabic keyboard, local slang, and the "unwritten rules" of how Saudis message. We go from installing the keyboard to sending your first Saudi WhatsApp.</p>
+</div>
+<div class="flex flex-col items-center p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-desert-sand" data-reveal-child>
+<div class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Free Bonus #2</h3>
+<p class="font-bold text-text-dark mb-2">The Private Community</p>
+<p class="text-sm text-gray-700">Get direct access to a WhatsApp group with the other members. Practice with learners, share your wins, and get help from peers on the same journey.</p>
+</div>
+<div class="flex flex-col items-center p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-desert-sand" data-reveal-child>
+<div class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl">person_pin</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Free Bonus #3</h3>
+<p class="font-bold text-text-dark mb-2">Direct Access to the Instructor</p>
+<p class="text-sm text-gray-700">I am personally joining the WhatsApp group for this batch. I'll be there to answer your questions, provide direct feedback, and listen to your suggestions.</p>
+</div>
+</div>
+<div class="mt-12">
+<a class="inline-flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-text-dark text-white text-base font-bold hover:bg-background-dark/90 transition-colors" href="#pricing">
+                    Join the Course Today
+                </a>
+</div>
+</div>
+</section>
+<section class="py-20 bg-desert-sand scroll-reveal" id="faq">
+<div class="absolute bottom-0 left-0 opacity-[0.03] pointer-events-none text-9xl font-arabic-decorative text-primary z-0 rotate-[-10deg]">O?O3O?U,Oc</div>
+<div class="layout-container max-w-3xl mx-auto px-4 md:px-10 relative z-10">
+<h2 class="text-3xl md:text-4xl font-bold text-text-dark mb-10 text-center">Frequently Asked Questions</h2>
+<div class="space-y-4" data-reveal-stagger>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        When will the course launch?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">The first units will be available in <strong>early February 2026</strong>.</p>
+<p class="mt-3 text-gray-700 text-sm">This is a <strong>pre-order</strong> and a <strong>beta launch</strong>, and as a founding member, you'll see the content early and your feedback will help shape the final version of the course.</p>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        Why only 10 people can join the course?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">This is a beta launch, and I want to test the course recorded materials and improve it with the feedback of a fewer number of people before making it available for everyone!</p>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        What happens after I apply?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">During this <strong>beta period</strong>, I can only accept <strong>10 founding members</strong> in the first batch. All applications will be reviewed, and I'll choose the people for whom this course is the best fit right now.</p>
+<p class="mt-3 text-gray-700 text-sm">If you're selected, I'll confirm your spot, send payment instructions, and add you to the founding members group.</p>
+<p class="mt-3 text-gray-700 text-sm">If you're not in the first 10, you'll still get access to the full course a few months later, once it's ready for the wider launch.</p>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        How much time do I need each week, and how long does the course take?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">You'll make good progress with about <strong>3 hours per week</strong>.</p>
+<p class="mt-3 text-gray-700 text-sm">Most learners complete the course in <strong>3-6 months</strong>, depending on their schedule and pace. You have <strong>lifetime access</strong>, so you can go faster or slower as needed.</p>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        Will this course make me fluent?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">This is a <strong>foundational course</strong>. This course will <strong>not</strong> make you fully fluent, but it will give you a <strong>strong foundation</strong> in Saudi Arabic.</p>
+<p class="mt-3 text-gray-700 text-sm">Inside the course, you will learn <strong>almost all the essential grammar rules</strong> you need to speak Arabic in daily life.</p>
+<p class="mt-3 text-gray-700 text-sm">By the end of the course, you'll be able to:</p>
+<ul class="list-disc list-inside text-gray-700 text-sm space-y-1 mt-2">
+<li>Introduce yourself and talk about your background</li>
+<li>Handle common daily situations (work, caf&eacute;s, shops, directions, etc.)</li>
+<li>Have simple conversations with Saudis</li>
+<li>Understand basic spoken Arabic in clear, everyday contexts</li>
+</ul>
+<p class="mt-3 text-gray-700 text-sm">After this Foundational Course, there will be <strong>two follow-up programs</strong> -- an <strong>Intermediate</strong> course and an <strong>Advanced</strong> course -- for learners who want to keep going and reach higher levels of fluency. Fluency comes with more time and more input.</p>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        Do I need to know how to read Arabic, or can I learn without reading?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">You <strong>do not</strong> need to read Arabic to start this course.</p>
+<p class="mt-3 text-gray-700 text-sm">Inside this Foundational Course, all Arabic is written <strong>fully in Arabic script</strong>.</p>
+<p class="mt-3 text-gray-700 text-sm">During the lessons, <strong>I read every Arabic sentence out loud</strong>, so you can rely on <strong>listening only</strong> and still follow the course, even if you don't read.</p>
+<p class="mt-3 text-gray-700 text-sm">However, skipping reading will usually make your progress <strong>slower in the mid and long term</strong>.</p>
+<p class="mt-3 text-gray-700 text-sm">Learning the script is a small, one-time investment (about <strong>10-20 hours</strong> for most learners) that unlocks a lot of extra potential: you'll be able to read signs, menus, messages, and every line of Arabic in the course much more easily -- and your overall progress will be smoother.</p>
+<p class="mt-3 text-gray-700 text-sm">You can watch this [<strong>free 3-hour YouTube reading course</strong>] to learn the Arabic script if you want to!</p>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        What if I already know some Arabic or have studied Standard Arabic (Fus`ha)?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">If you already know some Arabic, you will probably <strong>move faster</strong>.</p>
+<ul class="list-disc list-inside text-gray-700 text-sm space-y-1 mt-2">
+<li>If you know a few phrases or have taken a course before, this program will <strong>organize what you know</strong>, fill in gaps, and give you a clear structure.</li>
+<li>If you studied <strong>Fus`ha (Standard Arabic)</strong>, this course will show you the <strong>Najdi dialect</strong> people actually speak in Riyadh, so you can finally follow real conversations.</li>
+<li>If you've already covered all the beginner topics of the Saudi dialect (you know all the tenses, essential grammar rules, and the most common 500 words) then this course might not be the right level for you.</li>
+</ul>
+</details>
+<details class="group bg-background-light rounded-lg shadow-sm p-4 [&_summary::-webkit-details-marker]:hidden" data-reveal-child>
+<summary class="flex items-center justify-between cursor-pointer font-bold text-text-dark">
+                        Which dialect does this course teach, and will I be understood in other Saudi cities Gulf countries?
+                        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-gray-700 text-sm">The course teaches <strong>Najdi Arabic</strong> -- the dialect spoken in <strong>Riyadh and central Saudi Arabia</strong>. It is widely understood across the country and is often used in professional settings.</p>
+<p class="mt-3 text-gray-700 text-sm">If you live in places like <strong>Jeddah, the UAE, Qatar, or Kuwait</strong>, people will still understand you to a large extent. Gulf dialects share a lot of vocabulary and structure, so the foundation you build here will transfer well, even though each city has its own <em>flavor</em>.</p>
+</details>
+</div>
+</div>
+</section>
+<footer class="bg-background-dark text-text-light py-12 border-t border-white/10">
+<div class="layout-container max-w-7xl mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-primary">translate</span>
+<span class="font-bold text-lg">Riyadh Launchpad</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="text-xs text-gray-500">© 2026 Riyadh Launchpad. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        (() => {
+            const revealTargets = Array.from(
+                document.querySelectorAll(".scroll-reveal, [data-reveal-child]")
+            );
+            const prefersReducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            document.querySelectorAll("[data-reveal-stagger]").forEach((group) => {
+                const children = Array.from(group.querySelectorAll("[data-reveal-child]"));
+                children.forEach((child, index) => {
+                    child.style.transitionDelay = `${index * 90}ms`;
+                });
+            });
+
+            if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+                revealTargets.forEach((el) => el.classList.add("is-visible"));
+                return;
+            }
+
+            const observer = new IntersectionObserver(
+                (entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+                        entry.target.classList.add("is-visible");
+                        obs.unobserve(entry.target);
+                    });
+                },
+                { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+            );
+
+            revealTargets.forEach((el) => observer.observe(el));
+        })();
+    </script>
+</body></html>
